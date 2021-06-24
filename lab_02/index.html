@@ -1,0 +1,76 @@
+<head>
+  <script type="module" src="./js/assets/jquery-3.5.1.min.js"></script>
+  <script type="module" src="./js/loader.js"></script>
+  <link rel="stylesheet" href="./css/style.css" />
+  <link rel="stylesheet" href="./css/fontawesome/css/all.min.css" />
+</head>
+<body>
+  <div class="flex">
+    <div class="canvas-container">
+      <canvas id="canvas">
+        Your browser don't support canvas. Update please.
+      </canvas>
+    </div>
+    <div class="panel">
+      <div id="panel_buttons">
+        <button id="btn_move" title="Перемещение">
+          <i class="far fa-hand-paper"></i>
+        </button>
+        <button id="btn_zoom_in" title="Приближение">
+          <i class="fas fa-search-plus"></i>
+        </button>
+        <button id="btn_zoom_out" title="Удаление">
+          <i class="fas fa-search-minus"></i>
+        </button>
+        <button id="btn_rotate" title="Поворот">
+          <i class="fas fa-sync-alt"></i>
+        </button>
+
+        <button id="btn_restore" title="Восстановить систему координат">
+          <i class="fas fa-trash-restore"></i>
+        </button>
+
+        <button id="btn_back" title="Назад">
+          <i class="fas fa-undo"></i>
+        </button>
+
+        <button
+          title="Информация"
+          onclick="(e=>{window.open('./info.html', '', 'width=500,height=600')})()"
+        >
+          <i class="fas fa-info"></i>
+        </button>
+      </div>
+
+      <div>
+        <p class="result"></p>
+      </div>
+
+      <p>Центр преобразования:</p>
+      <input id="cursor_cord" class="cord-verify" type="tel" value="0;0">
+
+      <div>
+        <p>Поворот на градус:</p>
+        <input id="rotate_angle_input" class="num-verify" type="tel" value="0"> 
+        <button id="rotate_btn">Применить</button> 
+      </div>
+      <div>
+        <p>Переместить на:</p>
+        <input id="translate_cord_input" class="cord-verify" type="tel" value="0;0">
+        <button id="translate_btn">Применить</button> 
+      </div>
+      <div>
+        <p>Масштабирование:</p>
+        <form id="zoom_form" onsubmit="return false">
+          <label> <input name="zoom" type="radio" value="x"> По X</label> <br>
+          <label> <input name="zoom" type="radio" value="y"> По Y</label> <br>
+          <label> <input name="zoom" checked type="radio" value="0"> Однородное</label> <br>
+          
+        </form>
+        <p>Коэффициент:</p>
+        <input id="kof_input" class="num-verify" type="tel" value="1">
+        <button id="zoom_btn">Применить</button> 
+      </div>
+    </div>
+  </div>
+</body>

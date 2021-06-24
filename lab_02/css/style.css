@@ -1,0 +1,125 @@
+body {
+  margin: 0;
+  font-family: sans-serif;
+  box-sizing: border-box;
+}
+
+#canvas.grab.active {
+  cursor: grabbing;
+}
+
+#canvas.grab {
+  cursor: grab;
+}
+
+#canvas.zoom_in {
+  cursor: zoom-in;
+}
+
+#canvas.zoom_out {
+  cursor: zoom-out;
+}
+
+#canvas.rotate {
+  cursor: crosshair;
+}
+
+#canvas.add_point {
+  cursor: crosshair;
+}
+
+#panel_buttons {
+  display: flex;
+  flex-wrap: wrap;
+  position: sticky;
+  top: 0;
+  background: #fff;
+  width: 100%;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+}
+
+#panel_buttons button {
+  padding: 10px;
+  margin: 0;
+  border: none;
+  background: #fff;
+}
+#panel_buttons button:hover {
+  background: #aaa;
+}
+
+#panel_buttons button.active {
+  background: #66bb6a;
+}
+
+.canvas-container {
+  width: 100%;
+  height: 100%;
+}
+
+.canvas-container canvas {
+  width: 100%;
+  height: 100%;
+}
+.flex {
+  display: flex;
+  height: 100%;
+}
+.panel {
+  width: 280px;
+  overflow-y: auto;
+  box-shadow: -1px 0px 20px 1px rgba(0, 0, 0, 0.3);
+}
+
+.panel p {
+  margin:2px;
+}
+
+.panel_objects {
+  overflow-y: auto;
+}
+.panel-object {
+  display: flex;
+  padding: 0 2px;
+}
+
+.panel-object input {
+  max-width: 100%;
+  width: 100%;
+  min-width: 10px;
+}
+
+.panel-object .panel-object_state {
+  min-width: 20px;
+  height: 30px;
+  margin-top: 3px;
+  margin-left: 3px;
+  background: #ccc;
+}
+
+.panel-object_name {
+  margin-top: 7px;
+  margin-right: 3px;
+}
+
+.panel-object_state {
+  position: relative;
+}
+.panel-object_state .menu {
+  display: none;
+  position: absolute;
+  /* top:30px; */
+  width: 100px;
+  right: 5px;
+  border-radius: 5px;
+  background: #fff;
+  box-shadow: 1px 1px 3px 1px rgba(0, 0, 0, 0.3);
+}
+.panel-object_state .menu button {
+  width: 100%;
+  display: block;
+}
+.panel-object_state:hover .menu {
+  display: block;
+}
